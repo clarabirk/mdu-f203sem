@@ -1,6 +1,6 @@
 <?php
 /**
- * Adds Foo_Widget widget.
+ * Adds Fetch_WP_Posts_Widget widget.
  */
 class Fetch_WP_Posts_Widget extends WP_Widget {
 
