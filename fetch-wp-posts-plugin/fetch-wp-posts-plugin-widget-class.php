@@ -5,6 +5,7 @@
 class Fetch_WP_Posts_Widget extends WP_Widget {
 	/**
 	 * Register widget with WordPress.
+	 * __construct() – constructor function where you can define your widget’s parameters.
 	 */
 	function __construct() {
 		parent::__construct(
@@ -16,6 +17,7 @@ class Fetch_WP_Posts_Widget extends WP_Widget {
 
 	/**
 	 * Front-end display of widget.
+	 * widget() – contains the output of the widget.
 	 */
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
@@ -28,6 +30,7 @@ class Fetch_WP_Posts_Widget extends WP_Widget {
 
 	/**
 	 * Back-end widget form.
+	 * form() – determines widget settings in the WordPress dashboard.
 	 */
 	public function form( $instance ) {
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'New title', 'fwppw_domain' );
@@ -41,6 +44,7 @@ class Fetch_WP_Posts_Widget extends WP_Widget {
 
 	/**
 	 * Sanitize widget form values as they are saved.
+	 * update() – updates widget settings.
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
