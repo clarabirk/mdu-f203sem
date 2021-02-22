@@ -5,6 +5,7 @@ let myAudioElement;
 
 document.addEventListener("DOMContentLoaded", function () {
   initAudio();
+  // appendButtons();
 });
 
 function initAudio(){
@@ -24,4 +25,11 @@ function playAudio() {
 function pauseAudio() {
   myAudioElement.pause();
 }
+
+// function appendButtons(){
+//   document.querySelector("#content").innerHTML += /*html*/`
+//     <button onclick="playAudio()">Play</button>
+//     <button onclick="pauseAudio()">Pause</button>
+//   `;
+// }
 
