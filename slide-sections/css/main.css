@@ -1,0 +1,115 @@
+/* ---------- root variables ---------- */
+:root {
+  --green: rgb(38, 76, 89);
+  --light-green: rgb(172, 198, 201);
+  --light-grey: #f1f1f4;
+  --text-color-light: #f1f1f1;
+  --text-color-dark: #333;
+}
+
+/* ---------- general styling ---------- */
+html {
+  color: var(--text-color-dark);
+  font-family: Helvetica, Arial, sans-serif;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.section-slide {
+  height: 400px;
+  display: none;
+  animation: fadeIn ease 0.50s;
+  -webkit-animation: fadeIn ease 0.50s;
+  -moz-animation: fadeIn ease 0.50s;
+  -o-animation: fadeIn ease 0.50s;
+  -ms-animation: fadeIn ease 0.50s;
+}
+
+#section1 {
+  background-color: var(--green);
+}
+
+#section2 {
+  background-color: var(--light-green);
+}
+
+#section3 {
+  background-color: var(--light-grey);
+}
+
+.fade-in {
+  animation: fadeIn ease 50s;
+  -webkit-animation: fadeIn ease 50s;
+  -moz-animation: fadeIn ease 50s;
+  -o-animation: fadeIn ease 50s;
+  -ms-animation: fadeIn ease 50s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
