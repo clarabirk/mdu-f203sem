@@ -8,7 +8,7 @@ let activeSlide = 0;
 document.addEventListener("DOMContentLoaded", function () {
   slideSections = document.querySelectorAll(".section-slide"); // declaring slideSections
   showSlideSection("section1"); // show the first section
-  setInterval(() => setActiveSlide(), 3000); // start the loop interval 
+  setInterval(() => setActiveSlide(), 4000); // start the loop interval 
 });
 
 /* ----------- Slide Section Functions ----------- */
