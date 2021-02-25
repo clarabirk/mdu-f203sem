@@ -7,7 +7,7 @@ let activeSlide = 0;
 /* ----------- The DOM is ready ----------- */
 document.addEventListener("DOMContentLoaded", function () {
   slideSections = document.querySelectorAll(".section-slide"); // declaring slideSections
-  showSlideSection("section1"); // show the first section
+  showSlide(1); // show the first section
   setInterval(() => setActiveSlide(), 4000); // start the loop interval 
 });
 
@@ -23,11 +23,12 @@ function hideAllSlideSections() {
 }
 
 /**
- * displaying a slide section by a given id: idOfSlideSection
+ * displaying a slide section by given index
  */
-function showSlideSection(idOfSlideSection) {
+function showSlide(index) {
   hideAllSlideSections(); // start by hiding all slides sections
-  document.getElementById(idOfSlideSection).style.display = "block"; // display the new one by the given id
+  activeSlide = index;
+  slideSections[activeSlide].style.display = "block"; // display slide section by activeSlide number
 }
 
 /**
