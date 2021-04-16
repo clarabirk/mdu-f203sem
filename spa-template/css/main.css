@@ -76,7 +76,7 @@ h1 {
 /* Add a color to the active/current link */
 .tabbar a.active {
   background-color: var(--light-green);
-  color: var(--text-color-light);
+  color: var(--green);
 }
 
 /* ---------- page styling ---------- */
