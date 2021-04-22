@@ -154,10 +154,10 @@ function appendMovies(movies) {
 }
 
 function generateFavMovieButton(movieId) {
-  let btnTemplate = `
+  let btnTemplate = /*html*/ `
     <button onclick="addToFavourites('${movieId}')">Add to favourites</button>`;
   if (_currentUser.favMovies && _currentUser.favMovies.includes(movieId)) {
-    btnTemplate = `
+    btnTemplate = /*html*/ `
       <button onclick="removeFromFavourites('${movieId}')" class="rm">Remove from favourites</button>`;
   }
   return btnTemplate;
