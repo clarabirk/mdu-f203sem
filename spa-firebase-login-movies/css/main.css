@@ -15,7 +15,7 @@ html {
   height: 100%;
   text-align: center;
   width: 100%;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 
 h1 {
   font-size: 2em;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 3px;
 }
 
@@ -43,7 +43,7 @@ h1 {
 
 .topbar h2 {
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .topbar a {
@@ -179,7 +179,7 @@ form {
 }
 
 form button {
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
   cursor: pointer;
   border: none;
@@ -193,7 +193,7 @@ form button {
 }
 
 article button {
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
   cursor: pointer;
   border: none;
@@ -201,15 +201,25 @@ article button {
   border-radius: 0;
   color: var(--text-color-light);
   background-color: var(--green);
-  width: 40%;
+  width: 100%;
 }
 
 article button.rm {
   background-color: var(--light-green);
+  color: var(--green);
 }
 
 input {
-  margin: 1em auto;
+  margin: 0.5em auto 2em;
+  width: 100%;
+  max-width: 350px;
+  padding: 12px 15px;
+  box-sizing: border-box;
+  display: block;
+}
+
+textarea {
+  margin: 0.5em auto 2em;
   width: 100%;
   max-width: 350px;
   padding: 12px 15px;
@@ -220,25 +230,26 @@ input {
 /* Grid container */
 .grid-container {
   display: grid;
-  grid-template-columns: 100%;
-  padding: 10px;
+  grid-template-columns: 1fr;
+  grid-gap: 2em;
+  padding: 1em;
 }
 
 @media (min-width: 600px) {
   .grid-container {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 992px) {
   .grid-container {
-    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 .grid-container>article {
   text-align: center;
-  padding: 10px;
+  padding: 2em;
 }
 
 .grid-container>article img {
@@ -247,14 +258,27 @@ input {
   margin-bottom: 1em;
 }
 
-.grid-container>article h3 {
-  font-weight: 200;
+.grid-container>article h2 {
+  font-weight: 400;
 }
 
 .image-preview {
   width: 100%;
   height: auto;
   margin: 1em 0;
+}
+
+/* ---------- card styling ---------- */
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* ---------- authentication styling ---------- */
@@ -276,6 +300,10 @@ input {
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.firebaseui-form-actions {
+  display: inline-flex;
 }
 
 .mdl-button--raised.mdl-button--colored,

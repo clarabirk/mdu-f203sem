@@ -141,8 +141,8 @@ function init() {
 function appendMovies(movies) {
   let htmlTemplate = "";
   for (let movie of movies) {
-    htmlTemplate += `
-      <article>
+    htmlTemplate += /*html*/ `
+      <article class="card">
         <h2>${movie.title} (${movie.year})</h2>
         <img src="${movie.img}">
         <p>${movie.description}</p>
@@ -173,8 +173,8 @@ async function appendFavMovies(favMovieIds = []) {
       await _movieRef.doc(movieId).get().then(function (doc) {
         let movie = doc.data();
         movie.id = doc.id;
-        htmlTemplate += `
-        <article>
+        htmlTemplate += /*html*/ `
+        <article class="card">
           <h2>${movie.title} (${movie.year})</h2>
           <img src="${movie.img}">
           <p>${movie.description}</p>
@@ -203,4 +203,28 @@ function removeFromFavourites(movieId) {
   _userRef.doc(_currentUser.uid).update({
     favMovies: firebase.firestore.FieldValue.arrayRemove(movieId)
   });
+}
+
+// creates a new movie object and adds to firestore collection
+function createMovie() {
+  let inputTitle = document.getElementById("title");
+  let inputYear = document.getElementById("year");
+  let inputImageUrl = document.getElementById("imageUrl");
+  let inputDescription = document.getElementById("description");
+
+  let newMovie = {
+    title: inputTitle.value,
+    year: inputYear.value,
+    img: inputImageUrl.value,
+    description: inputDescription.value
+  }
+  // add to movie ref
+  _movieRef.add(newMovie);
+  //navigate to home
+  navigateTo("home");
+  // reset input values
+  inputTitle.value = "";
+  inputYear.value = "";
+  img: inputImageUrl.value = "";
+  inputDescription.value = "";
 }
