@@ -23,7 +23,7 @@ let teacher2 = {
   address: "Ringvej Syd 104, 8260 Viby J",
   position: "Lecturer",
   department: "Multimedia Design",
-  img: "https://media-exp1.licdn.com/dms/image/C4D03AQElLjyVglReqw/profile-displayphoto-shrink_800_800/0/1520939660019?e=1617235200&v=beta&t=1KHGH0e4ATtzyiDnRUUzL9sOJdvCAUYZtot_bv76PCI"
+  img: "https://media-exp1.licdn.com/dms/image/C4D03AQElLjyVglReqw/profile-displayphoto-shrink_800_800/0/1520939660019?e=1624492800&v=beta&t=wMdOyb3SFMF5rSv3GAX2x6hUSXZcSAPSGJy36ewFWek"
 };
 
 // log objects to the developer console
@@ -33,7 +33,7 @@ console.log(teacher2);
 // Appending objects to the DOM
 
 // teacher1 - Birgitte
-document.querySelector("#grid-teachers").innerHTML +=/*html*/ `
+document.querySelector("#grid-teachers").innerHTML += /*html*/ `
 <article>
   <img src='${teacher1.img}'>
   <h3>${teacher1.name}</h3>
@@ -42,7 +42,7 @@ document.querySelector("#grid-teachers").innerHTML +=/*html*/ `
 </article>`;
 
 //teacher2 - Martin
-document.querySelector("#grid-teachers").innerHTML +=/*html*/ `
+document.querySelector("#grid-teachers").innerHTML += /*html*/ `
 <article>
   <img src='${teacher2.img}'>
   <h3>${teacher2.name}</h3>
