@@ -22,6 +22,15 @@ h3 {
   letter-spacing: 3px;
 }
 
+/* input {
+  margin: 1em auto;
+  width: 100%;
+  max-width: 350px;
+  padding: 12px 15px;
+  box-sizing: border-box;
+  display: block;
+} */
+
 /* ---------- grid container styling ---------- */
 .grid-container {
   display: grid;
