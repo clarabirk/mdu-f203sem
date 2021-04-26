@@ -53,7 +53,6 @@ function appendTeachers(teachers) {
         <a href='mailto:${teacher.mail}'>${teacher.mail}</a>
       </article>
     `;
-
   }
 }
 
