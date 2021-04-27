@@ -69,17 +69,3 @@ function search(value) {
   }
   appendTeachers(filteredTeachers);
 }
-
-// function search(value) {
-//   value = value.toLowerCase();
-//   let filteredTeachers = teachers.filter(function(teacher){
-//     return teacher.name.toLowerCase().includes(value);
-//   });
-//   appendTeachers(filteredTeachers);
-// }
-
-// function search(value) {
-//   value = value.toLowerCase();
-//   let filteredTeachers = teachers.filter(teacher => teacher.name.toLowerCase().includes(value));
-//   appendTeachers(filteredTeachers);
-// }
