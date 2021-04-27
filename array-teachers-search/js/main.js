@@ -59,15 +59,27 @@ function appendTeachers(teachers) {
 }
 
 function search(value) {
-  console.log(value);
+  value = value.toLowerCase();
   let filteredTeachers = [];
   for (let teacher of teachers) {
     let name = teacher.name.toLowerCase();
-    if (name.includes(value.toLowerCase())) {
+    if (name.includes(value)) {
       filteredTeachers.push(teacher);
     }
   }
-
-  console.log(filteredTeachers);
   appendTeachers(filteredTeachers);
 }
+
+// function search(value) {
+//   value = value.toLowerCase();
+//   let filteredTeachers = teachers.filter(function(teacher){
+//     return teacher.name.toLowerCase().includes(value);
+//   });
+//   appendTeachers(filteredTeachers);
+// }
+
+// function search(value) {
+//   value = value.toLowerCase();
+//   let filteredTeachers = teachers.filter(teacher => teacher.name.toLowerCase().includes(value));
+//   appendTeachers(filteredTeachers);
+// }
