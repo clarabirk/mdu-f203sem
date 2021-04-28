@@ -30,7 +30,7 @@ _userRef.onSnapshot(function (snapshotData) {
 function appendUsers(users) {
   let htmlTemplate = "";
   for (let user of users) {
-    htmlTemplate += /*html*/`
+    htmlTemplate += /*html*/ `
       <article>
         <h2>${user.name}</h2>
         <img src="${user.img || 'img/placeholder.jpg'}">
@@ -59,6 +59,11 @@ function createUser() {
 
   _userRef.add(newUser);
   navigateTo("home");
+
+  //reset
+  nameInput.value = "";
+  mailInput.value = "";
+  imageInput.src = "";
 }
 
 // ========== UPDATE ==========
