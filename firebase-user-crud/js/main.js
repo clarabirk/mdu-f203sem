@@ -28,6 +28,7 @@ userRef.onSnapshot(function (snapshotData) {
     users.push(user);
   });
   appendUsers(users);
+  showLoader(false);
 });
 
 // append users to the DOM
@@ -91,4 +92,15 @@ function updateUser() {
 function deleteUser(id) {
   console.log(id);
   userRef.doc(id).delete();
+}
+
+// =========== Loader functionality =========== //
+
+function showLoader(show = true) {
+  let loader = document.querySelector('#loader');
+  if (show) {
+    loader.classList.remove("hide");
+  } else {
+    loader.classList.add("hide");
+  }
 }
