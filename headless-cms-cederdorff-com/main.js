@@ -1,5 +1,40 @@
 "use strict";
 
+document.addEventListener("DOMContentLoaded", initTypedJs());
+
+// ---------- typed.js ---------- //
+function initTypedJs() {
+  new Typed(".typed", {
+    strings: ["Rasmus Cederdorff.", "a Freelancer.", "a Lecturer.", "a Web Developer.", "an App Developer.", "a Web Architect.", "a Teacher."],
+    typeSpeed: 100,
+    loop: true,
+  });
+};
+
+// ---------- smooth scroll ---------- //
+
+// When the user scrolls down 500px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction()
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    document.getElementById("scrollTop").style.display = "block";
+  } else {
+    document.getElementById("scrollTop").style.display = "none";
+  }
+}
+
+function scrollToTheTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+// ---------- fetch client posts ---------- //
+
 // const postFetchUrl = "https://api.cederdorff.com/wp-json/wp/v2/posts?_embed";
 const postFetchUrl = "https://api.cederdorff.com/wp-json/wp/v2/posts?_embed&categories=2";
 
@@ -16,9 +51,8 @@ function appendClients(clients) {
   let html = "";
   for (let i = 0; i < clients.length; i++) {
     let client = clients[i];
-    console.log(client);
     if (i % 2 === 0) { // index is even
-      html += /*html*/`
+      html += /*html*/ `
         <article class="client">
           <div class="col-left even">
             <img src="${getFeaturedImageUrl(client)}" alt="${client.title.rendered}">
@@ -38,7 +72,7 @@ function appendClients(clients) {
         </article>
         `;
     } else { // index is odd
-      html += `
+      html += /*html*/ `
           <article class="client">
             <div class="col-right">
               <img src="${getFeaturedImageUrl(client)}" alt="${client.title.rendered}">
@@ -69,16 +103,4 @@ function getFeaturedImageUrl(client) {
     imageUrl = client._embedded['wp:featuredmedia'][0].source_url;
   }
   return imageUrl;
-}
-
-document.querySelector("#header").addEventListener("click", function () {
-  scrollTo("#expertise");
-});
-
-function scrollTo(element) {
-  document.querySelector(element).scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-    inline: "nearest"
-  });
 }

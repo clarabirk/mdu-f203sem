@@ -1,13 +1,39 @@
+/* green: rgb(38,76,89)
+light-green: rgb(172,198,201)
+light: rgb(241,241,236) --> light: rgb(241,241,244)*/
+/* fonts */
+/* @font-face {
+font-family: brown;
+src: url(fonts/brown/Brown-Thin.otf);
+font-weight: 200;
+}
+
+@font-face {
+font-family: brown;
+src: url(fonts/brown/Brown-Light.otf);
+font-weight: 300
+} */
 @font-face {
   font-family: brown;
-  src: url(../fonts/brown/Brown-Regular.otf);
+  src: url(fonts/brown/Brown-Regular.otf);
   font-weight: 400
 }
 
 @font-face {
   font-family: brown;
-  src: url(../fonts/brown/Brown-Bold.otf);
+  src: url(fonts/brown/Brown-Bold.otf);
   font-weight: 700
+}
+
+/* fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 /* general */
@@ -23,6 +49,7 @@ body {
   font-size: 0.8em;
   color: #333333;
   letter-spacing: 0.9px;
+  animation: fadeIn 0.5s;
 }
 
 p {
@@ -80,6 +107,10 @@ a:hover {
 
 .social-icons {
   margin-top: 20px;
+}
+
+.list-social span{
+  display: none;
 }
 
 img {
@@ -143,18 +174,17 @@ section {
 
 /* H E A D E R  */
 header {
-  background: rgb(241, 241, 244) url('../img/header_mobile.jpg') no-repeat top center;
+  background: rgb(241, 241, 244) url('img/header_mobile.jpg') no-repeat top center;
   background-size: 120%;
   width: 100%;
   margin: 0;
   height: 100%;
   max-height: 754px;
-  cursor: pointer;
 }
 
 @media (min-width: 768px) {
   header {
-    background: rgb(241, 241, 244) url('../img/header_desktop.jpg') no-repeat center center;
+    background: rgb(241, 241, 244) url('img/header_desktop.jpg') no-repeat center center;
     background-size: 100%;
     min-height: 100%;
     max-height: 100%;
@@ -269,7 +299,7 @@ header .list-social i {
 
 /* E X P E R T I S E  */
 #expertise {
-  background: url('../img/expertise_bg.svg') no-repeat top center;
+  background: url('img/expertise_bg.svg') no-repeat top center;
   background-size: 155%;
 }
 
@@ -344,56 +374,56 @@ header .list-social i {
 
 @media (min-width: 1600px) {
   #expertise {
-    background: url('../img/expertise_bg_large.svg') no-repeat top center;
+    background: url('img/expertise_bg_large.svg') no-repeat top center;
     background-size: 125%;
   }
 }
 
 @media (min-width: 1700px) {
   #expertise {
-    background: url('../img/expertise_bg_large.svg') no-repeat top center;
+    background: url('img/expertise_bg_large.svg') no-repeat top center;
     background-size: 125%;
   }
 }
 
 @media (min-width: 1800px) {
   #expertise {
-    background: url('../img/expertise_bg_large.svg') no-repeat top center;
+    background: url('img/expertise_bg_large.svg') no-repeat top center;
     background-size: 117%;
   }
 }
 
 @media (min-width: 1900px) {
   #expertise {
-    background: url('../img/expertise_bg_large.svg') no-repeat top center;
+    background: url('img/expertise_bg_large.svg') no-repeat top center;
     background-size: 112%;
   }
 }
 
 @media (min-width: 2000px) {
   #expertise {
-    background: url('../img/expertise_bg_large.svg') no-repeat top center;
+    background: url('img/expertise_bg_large.svg') no-repeat top center;
     background-size: 108%;
   }
 }
 
 @media (min-width: 2200px) {
   #expertise {
-    background: url('../img/expertise_bg_xl.svg') no-repeat top center;
+    background: url('img/expertise_bg_xl.svg') no-repeat top center;
     background-size: 108%;
   }
 }
 
 @media (min-width: 2300px) {
   #expertise {
-    background: url('../img/expertise_bg_xl.svg') no-repeat top center;
+    background: url('img/expertise_bg_xl.svg') no-repeat top center;
     background-size: 104%;
   }
 }
 
 @media (min-width: 2400px) {
   #expertise {
-    background: url('../img/expertise_bg_xl.svg') no-repeat top center;
+    background: url('img/expertise_bg_xl.svg') no-repeat top center;
     background-size: 100%;
   }
 }
