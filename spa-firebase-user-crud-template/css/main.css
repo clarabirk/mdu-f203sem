@@ -198,6 +198,8 @@ input {
   max-width: 300px;
   width: 100%;
   margin-bottom: 1em;
+  max-height: 200px;
+  object-fit: cover;
 }
 
 .grid-container>article h3 {
