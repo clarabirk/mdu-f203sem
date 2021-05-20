@@ -9,7 +9,7 @@ let _movies;
 
 // ========== FIREBASE AUTH ========== //
 // Listen on authentication state change
-firebase.auth().onAuthStateChanged(function (user) {
+firebase.auth().onAuthStateChanged(user => {
   if (user) { // if user exists and is authenticated
     userAuthenticated(user);
   } else { // if user is not logged in
@@ -73,9 +73,9 @@ function logout() {
 function appendUserData() {
   document.querySelector('#name').value = _currentUser.displayName;
   document.querySelector('#mail').value = _currentUser.email;
-  document.querySelector('#birthdate').value = _currentUser.birthdate;
-  document.querySelector('#hairColor').value = _currentUser.hairColor;
-  document.querySelector('#imagePreview').src = _currentUser.img;
+  document.querySelector('#birthdate').value = _currentUser.birthdate || "";
+  document.querySelector('#hairColor').value = _currentUser.hairColor || "";
+  document.querySelector('#imagePreview').src = _currentUser.img || "";
 }
 
 // update user data - auth user and database object
@@ -88,12 +88,10 @@ function updateUser() {
   });
 
   // update database user
-  _userRef.doc(_currentUser.uid).set({
+  _userRef.doc(_currentUser.uid).update({
     img: document.querySelector('#imagePreview').src,
     birthdate: document.querySelector('#birthdate').value,
     hairColor: document.querySelector('#hairColor').value
-  }, {
-    merge: true
   });
 }
 
@@ -115,12 +113,12 @@ function init() {
   // init user data and favourite movies
   _userRef.doc(_currentUser.uid).onSnapshot({
     includeMetadataChanges: true
-  }, function (userData) {
+  }, userData => {
     if (!userData.metadata.hasPendingWrites && userData.data()) {
       _currentUser = {
         ...firebase.auth().currentUser,
         ...userData.data()
-      }; //concating two objects: authUser object and userData objec from the db
+      }; //concat two objects: authUser object and userData objec from the db
       appendUserData();
       appendFavMovies(_currentUser.favMovies);
       if (_movies) {
@@ -175,7 +173,7 @@ async function appendFavMovies(favMovieIds = []) {
     htmlTemplate = "<p>Please, add movies to favourites.</p>";
   } else {
     for (let movieId of favMovieIds) {
-      await _movieRef.doc(movieId).get().then(function (doc) {
+      await _movieRef.doc(movieId).get().then(doc => {
         let movie = doc.data();
         movie.id = doc.id;
         htmlTemplate += /*html*/ `
@@ -222,7 +220,7 @@ function createMovie() {
     year: inputYear.value,
     img: inputImageUrl.value,
     description: inputDescription.value
-  }
+  };
   // add to movie ref
   _movieRef.add(newMovie);
   //navigate to home
@@ -230,6 +228,6 @@ function createMovie() {
   // reset input values
   inputTitle.value = "";
   inputYear.value = "";
-  img: inputImageUrl.value = "";
+  inputImageUrl.value = "";
   inputDescription.value = "";
 }
