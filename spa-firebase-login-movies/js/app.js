@@ -38,12 +38,10 @@ function userNotAuthenticated() {
     signInSuccessUrl: '#home'
   };
   // Init Firebase UI Authentication
-
-  // Init Firebase UI Authentication
   if (!_firebaseUI) {
     _firebaseUI = new firebaseui.auth.AuthUI(firebase.auth());
   }
-  ui.start('#firebaseui-auth-container', uiConfig);
+  _firebaseUI.start('#firebaseui-auth-container', uiConfig);
   showLoader(false);
 }
 
