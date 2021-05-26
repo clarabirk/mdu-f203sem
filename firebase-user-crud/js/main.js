@@ -55,8 +55,6 @@ function createUser() {
   // references to the input fields
   let nameInput = document.querySelector('#name');
   let mailInput = document.querySelector('#mail');
-  console.log(nameInput.value);
-  console.log(mailInput.value);
 
   let newUser = {
     name: nameInput.value,
