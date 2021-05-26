@@ -3,6 +3,7 @@
 // ========== GLOBAL VARIABLES ========== //
 const _movieRef = _db.collection("movies");
 const _userRef = _db.collection("users");
+let _firebaseUI;
 let _currentUser;
 let _movies;
 
@@ -37,8 +38,10 @@ function userNotAuthenticated() {
     signInSuccessUrl: '#home'
   };
   // Init Firebase UI Authentication
-  const ui = new firebaseui.auth.AuthUI(firebase.auth());
-  ui.start('#firebaseui-auth-container', uiConfig);
+  if (!_firebaseUI) {
+    _firebaseUI = new firebaseui.auth.AuthUI(firebase.auth());
+  }
+  _firebaseUI.start('#firebaseui-auth-container', uiConfig);
   showLoader(false);
 }
 
