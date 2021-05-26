@@ -52,9 +52,10 @@ function createUser() {
   let mailVal = document.querySelector('#mail').value;
   let imageSrc = document.querySelector('#imagePreview').src;
 
-  // TODO: create a new object called newUser with the properties: name, mail & img. Add newUser to _userRef (cloud firestore)
+  // TODO: create a new object called newUser with the properties: name, mail & img. 
+  // Add newUser to _userRef (cloud firestore)
   // make sure to nagivate to home: navigateTo("home");
-
+  // EXTRA: reset input field values
 }
 
 // ========== UPDATE ==========
