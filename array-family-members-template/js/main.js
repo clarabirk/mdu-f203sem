@@ -39,26 +39,46 @@ let familyMembers = [{
   img: "img/jenspeter.jpg"
 }];
 
+
+
 console.log(familyMembers);
 
 /*
-Appends data to the DOM
+Appends json data to the DOM
 */
 function appendPersons(persons) {
-  // TODO: append family members to det dom using a for-off loop
+  let htmlTemplate = "";
+  for (let person of persons) {
+    htmlTemplate += /*html*/`
+      <article>
+        <img src="${person.img}">
+        <h4>${person.name}</h4>
+        <p>${person.age} years old</p>
+        <p>Hair color: ${person.hairColor}</p>
+        <p>Relation: ${person.relation}</p>
+      </article>
+    `;
+  }
+  document.querySelector("#persons").innerHTML = htmlTemplate;
 }
 
-appendPersons(familyMembers); // calling the append function with familyMember Arrays as argument
+appendPersons(familyMembers);
 
-/*
-Search functionality: find objects by given searchValue
-*/
 function search(searchValue) {
   searchValue = searchValue.toLowerCase();
   console.log(searchValue);
 
-  // TODO: implement search functionality
+  let filteredFamilyMembers = [];
+
+  for (let familyMember of familyMembers) {
+    let name = familyMember.name.toLowerCase();
+    if (name.includes(searchValue.toLowerCase())) {
+      filteredFamilyMembers.push(familyMember);
+    }
+  }
+  appendPersons(filteredFamilyMembers);
 }
+
 
 /*
 Adds a new object to the array familyMembers 
@@ -67,6 +87,20 @@ function add() {
   console.log("Add button clicked");
 
   let inputName = document.getElementById('inputName');
+  let inputAge = document.getElementById('inputAge');
+  let inputHairColor = document.getElementById('inputHairColor');
+  let inputRelation = document.getElementById('inputRelation');
+  let inputImageUrl = document.getElementById('inputImageUrl');
 
-  // TODO: implement add functionality
+  let newPerson = {
+    name: inputName.value,
+    age: inputAge.value,
+    hairColor: inputHairColor.value,
+    relation: inputRelation.value,
+    img: inputImageUrl.value
+  };
+  console.log(newPerson);
+
+  familyMembers.push(newPerson);
+  appendPersons(familyMembers);
 }
